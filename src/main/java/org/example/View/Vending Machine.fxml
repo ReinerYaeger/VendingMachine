@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="794.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="185.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turing's Vending Machine" textAlignment="CENTER" wrappingWidth="494.416015625">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="269.0" layoutY="262.0" prefHeight="29.0" prefWidth="480.0" />
+      <Label layoutX="57.0" layoutY="270.0" prefHeight="21.0" prefWidth="178.0" text="Input String to Purchase">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="266.0" layoutY="117.0" prefHeight="21.0" prefWidth="71.0" text="Currency">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="157.0" text="Items">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="117.0" text="a = $5">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="432.0" layoutY="117.0" text="b = $10">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="509.0" layoutY="117.0" text="c = $20">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="444.0" layoutY="159.0" text="Knife = K">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="338.0" layoutY="159.0" text="Napkin = N">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="522.0" layoutY="159.0" text="Fork = F">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="594.0" layoutY="159.0" text="Spoon = S">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="197.0" text="Cost for Items">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="444.0" layoutY="197.0" text="K $25">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="531.0" layoutY="197.0" text="F $15">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="609.0" layoutY="197.0" text="S $20">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="381.0" layoutY="197.0" text="N $10">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="771.0" layoutY="265.0" mnemonicParsing="false" text="Purchase">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Pane layoutX="4.0" layoutY="559.0" prefHeight="229.0" prefWidth="901.0">
+         <children>
+            <QuadCurve controlX="-56.0" controlY="201.0" endX="-44.0" endY="76.0" fill="DODGERBLUE" layoutX="106.0" layoutY="-48.0" startX="-64.0" startY="76.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="27.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="32.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="85.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="90.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="143.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="148.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="201.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="206.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="257.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="262.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="315.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="320.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="373.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="378.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="431.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="436.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="487.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="492.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="545.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="550.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="603.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="608.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="661.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="666.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="717.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="722.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="775.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="780.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="48.0" layoutX="833.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <TextArea layoutX="838.0" layoutY="104.0" prefHeight="30.0" prefWidth="29.0" />
+         </children>
+      </Pane>
+      <TextArea layoutX="14.0" layoutY="351.0" prefHeight="229.0" prefWidth="872.0" />
+   </children>
+</Pane>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="added some TODOs">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvalidInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Tape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Transition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/Vending Machine.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/10-jamaican-dollars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/20-jamaican-dollars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/5-jamaican-dollars.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/napkin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/plastic-fork.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/plastic-knife.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/View/images/plasticspoon.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2N6iEeG6yr3k72PEhnAUmx35Axj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jupiter\IdeaProjects\TocVendingMachine\src\main\java\org\example\View\images" />
+      <recent name="C:\Users\Jupiter\IdeaProjects\TocVendingMachine\src\main\java\org\example\View" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.View.Client" />
+      <module name="TocVendingMachine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Model.Main" />
+      <module name="TocVendingMachine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="" />
+      <created>1678990825102</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678990825102</updated>
+      <workItem from="1678990825505" duration="1000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1679676176078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679676176078</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1679756051295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679756051295</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <created>1679757701646</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679757701646</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init">
+      <created>1679758045050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679758045050</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added transitions">
+      <created>1680404649165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680404649166</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added state change">
+      <created>1680407256223</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680407256223</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Turing machine working :)">
+      <created>1680408340343</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680408340343</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Turing machine working :)">
+      <created>1680408973905</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680408973905</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="added transitions" />
+    <MESSAGE value="added state change" />
+    <MESSAGE value="Turing machine working :)" />
+    <MESSAGE value="added some TODOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some TODOs" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
