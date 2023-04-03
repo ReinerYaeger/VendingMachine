@@ -46,7 +46,11 @@ public class TuringMachine {
             tape.input(input);
             //welcomeText();
             setStateRules();
-            start();
+            try {
+                start();
+            } catch (Tape.InvalidInputException e) {
+               System.err.println(e);
+            }
         }
     }
 
@@ -91,7 +95,7 @@ public class TuringMachine {
         stateRules.add(new Transition("q12","qa2",BLANK,BLANK,"R"));
     }
 
-    public void start(){
+    public void start() throws Tape.InvalidInputException{
 
         currentState = startState;
         Transition currentTransition = null;
@@ -103,7 +107,7 @@ public class TuringMachine {
         }while(currentTransition != null);
     }
 
-    public Transition changeState(String state){
+    public Transition changeState(String state) throws Tape.InvalidInputException{
 
         Transition transition = null;
 
@@ -128,16 +132,12 @@ public class TuringMachine {
                     }
 
                     // If input is accepted
-                    if(Objects.equals(transition.getNextState(), "qa2")){
-
+                    if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() == BLANK){
                         System.out.println("Accept State");
-
-
-
                         //TODO add code to restock register
                     }
 
-                    if(Objects.equals(transition.getNextState(), "qa")){
+                    else if(Objects.equals(transition.getNextState(), "qa")& tape.getHead() == BLANK){
                         System.out.println("Accept State");
 
                         System.out.println(sb.toString());
@@ -152,13 +152,11 @@ public class TuringMachine {
                         //TODO add code to dispense item to use
                     }
 
-                    //If input is rejected
-                    if(Objects.equals(currentState, "qr")){
-                        System.err.println("There was an error, Here is your money you filthy animal  :)");
-                        //TODO add code to input id wrong or when stock is too low
-
+                    if(Objects.equals(transition.getNextState(), "q12") & tape.getHead() !=   BLANK){
+                        throw new Tape.InvalidInputException("There was an error in the code");
+                    } else if (Objects.equals(transition.getNextState(), "q2") & tape.getHead() != BLANK) {
+                        throw new Tape.InvalidInputException("There was an error in the code");
                     }
-
                 }
             }
         }
@@ -170,10 +168,23 @@ public class TuringMachine {
 
         double costForItems = items.getCostForItems(sb.toString());
         double moneyGiven = items.getTotalInput(sb.toString());
+        Register moneyRegister = new Register();
+        Register.ItemRegister itemRegister = new Register.ItemRegister();
+
+        moneyRegister.setStoredValue(moneyGiven);
+        itemRegister.setStoredValue(costForItems);
 
         if(costForItems>moneyGiven){
-            throw  new InsufficientFundsException("Please Enter more money and tray again");
+            throw  new InsufficientFundsException("Please Enter more money and try again");
         }
+
+        else if(costForItems == moneyGiven){
+            //dispense item
+        }else if (costForItems <= moneyGiven){
+            //dispense item
+            //give change
+        }
+
 
         //TODO figure out a way to purchase this item and to dispense the individual items, and another thing we need to give the user their change
     }
