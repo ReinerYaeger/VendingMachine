@@ -118,7 +118,6 @@ public class TuringMachine {
             if(Objects.equals(rule.getCurrentState(), currentState)){
                 if (rule.getReadCharacter() == tape.getHead() ){
                     transition = rule;
-
                     sb.append(transition.getWriteCharacter());
 
                     System.out.println("[0] " + transition.toString()+"\n");
@@ -152,11 +151,11 @@ public class TuringMachine {
                         //TODO add code to dispense item to use
                     }
 
-                    if(Objects.equals(transition.getNextState(), "q12") & tape.getHead() !=   BLANK){
+/*                    if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() !=   BLANK){
                         throw new Tape.InvalidInputException("There was an error in the code");
-                    } else if (Objects.equals(transition.getNextState(), "q2") & tape.getHead() != BLANK) {
+                    } else if (Objects.equals(transition.getNextState(), "qa") & tape.getHead() != BLANK) {
                         throw new Tape.InvalidInputException("There was an error in the code");
-                    }
+                    }*/
                 }
             }
         }
