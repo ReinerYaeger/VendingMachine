@@ -4,6 +4,9 @@ import javax.swing.text.TabExpander;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
+import static org.example.Model.ConsoleColors.*;
+
+import static org.example.Model.ConsoleColors.WHITE_BOLD;
 
 public class Tape {
     public static final char BLANK = '$';
@@ -59,6 +62,7 @@ public class Tape {
     //If the direction is empty, the blank or null clause is pushed
     // This ensures the head is always pointing at a valid location
     public void moveHeadLeft(){
+        System.out.println( WHITE_BOLD_BRIGHT+"<> Tape head currently on [ " + getHead()+  " ]");
 
         System.out.println("<> Tape head moving left");
         rightTape.push(head);
@@ -66,24 +70,29 @@ public class Tape {
             leftTape.push(BLANK);
         }
 
+        System.out.println( WHITE_BOLD_BRIGHT+"<> ->> Head Moving left" + RESET);
         head = leftTape.pop();
-        System.out.println("<> Tape head location \t[" + getHead() + "]");
+        System.out.println(WHITE_BOLD+ "<> <<-- Tape head location \t[" + getHead() + "]" +RESET);
     }
 
     public void moveHeadRight(){
 
-        System.out.println("<> Tape head moving right");
+        System.out.println( WHITE_BOLD_BRIGHT+"<> Tape head currently on [ " + getHead()+  " ]");
 
+        if(head == BLANK){
+            return;
+        }
         leftTape.push(head);
         if(leftTape.isEmpty()){
             rightTape.push(BLANK);
         }
         if (!rightTape.isEmpty()){
+            System.out.println( WHITE_BOLD_BRIGHT+"<> ->> Head Moving right" + RESET);
              head = rightTape.pop();
         }
 
 
-        System.out.println("<> Tape head location \t[" + getHead() + "]");
+        System.out.println(WHITE_BOLD_BRIGHT+"<> Tape head location [ " + getHead() + " ]" + RESET);
 
     }
 

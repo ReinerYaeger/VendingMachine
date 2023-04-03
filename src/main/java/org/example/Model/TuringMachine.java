@@ -2,11 +2,11 @@ package org.example.Model;
 
 import java.util.*;
 
+import static org.example.Model.ConsoleColors.*;
 import static org.example.Model.Tape.BLANK;
 
 
 public class TuringMachine {
-
     private String input;
     private Tape tape = new Tape();
     private ArrayList <Transition> stateRules;
@@ -120,7 +120,7 @@ public class TuringMachine {
                     transition = rule;
                     sb.append(transition.getWriteCharacter());
 
-                    System.out.println("[0] " + transition.toString()+"\n");
+                    System.out.println(CYAN_BOLD+ "[Σ] " + transition.toString()+"\n" + RESET);
                     tape.setHead(transition.getWriteCharacter());
 
                     // move tape
@@ -132,12 +132,12 @@ public class TuringMachine {
 
                     // If input is accepted
                     if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() == BLANK){
-                        System.out.println("Accept State");
+                        System.out.println( GREEN_BOLD+ "[qa2] Restock: Accept State" + RESET);
                         //TODO add code to restock register
                     }
 
                     else if(Objects.equals(transition.getNextState(), "qa")& tape.getHead() == BLANK){
-                        System.out.println("Accept State");
+                        System.out.println(GREEN_BOLD + "[qa] Purchase: Accept State" +  RESET);
 
                         System.out.println(sb.toString());
 
