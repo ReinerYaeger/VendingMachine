@@ -265,19 +265,27 @@ public class TuringMachine {
 
 
 
+        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
         for (Map.Entry<String,Register> map : ITEMREGISTERMAP.entrySet()){
-
             switch (map.getKey()) {
                 case "F" :
+                    if(map.getValue().getStoredValue() !=0)
+                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Fork(s)"  + RESET);
                     vendingMachine.setForkCount(vendingMachine.getForkCount() - map.getValue().getStoredValue());
                     break;
                 case "N" :
+                    if(map.getValue().getStoredValue() !=0)
+                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Napkin(s)"  + RESET);
                     vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - map.getValue().getStoredValue());
                     break;
                 case "S" :
+                    if(map.getValue().getStoredValue() !=0)
+                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Spoon(s)"  + RESET);
                     vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - map.getValue().getStoredValue());
                     break;
                 case "K" :
+                    if(map.getValue().getStoredValue() !=0)
+                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Knife(ves)"  + RESET);
                     vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - map.getValue().getStoredValue());
                     break;
             }
@@ -292,6 +300,7 @@ public class TuringMachine {
             vendingMachine.setBalance(vendingMachine.getBalance() + totalInput);
         }
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Thank you for your purchase " + RESET);
+
 
 
         System.out.println(YELLOW_BOLD + "Total Input = " + totalInput+ RESET);

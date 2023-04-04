@@ -1,6 +1,6 @@
 package org.example.Model;public class Main {
     public static void main(String[] args) {
         TuringMachine tm;
-            tm = new TuringMachine("bbbaFF");
+            tm = new TuringMachine("bcccbbaKFFF");
     }
 }
