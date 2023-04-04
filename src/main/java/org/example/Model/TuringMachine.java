@@ -1,5 +1,6 @@
 package org.example.Model;
 
+import java.io.File;
 import java.util.*;
 
 import static org.example.Model.ConsoleColors.*;
@@ -15,19 +16,15 @@ public class TuringMachine {
     private RegisterTest totalMoney;
     private RegisterTest.ItemRegisterTest items = new RegisterTest.ItemRegisterTest();
     private StringBuilder sb = new StringBuilder();
-
     private static final Register INPUTMONEYREGISTER = new Register();
-
     private static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
+    private int totalCost;
+    private int totalInput;
 
 /*    private static final Register FITEMREGISTER = new Register();
     private static final Register SITEMREGISTER = new Register();
     private static final Register KITEMREGISTER = new Register();
     private static final Register NITEMREGISTER = new Register();*/
-
-
-
-    private double totalItemCost;
 
     static class  InsufficientFundsException extends Exception{
 
@@ -64,10 +61,6 @@ public class TuringMachine {
             setStateRules();
             try {
                 start();
-
-                for(Map.Entry<String, Register> s: ITEMREGISTERMAP.entrySet())
-                    System.out.println(s.getKey()  + " = " + s.getValue());
-
             } catch (Tape.InvalidInputException e) {
                System.err.println(e);
             }
@@ -135,6 +128,7 @@ public class TuringMachine {
 
 
 
+
         for(Transition rule : stateRules){
 
             if(Objects.equals(rule.getCurrentState(), currentState)){
@@ -155,16 +149,46 @@ public class TuringMachine {
                     }
 
                     /*
+                    *
                     * Performing computations with the registers
                     *
                     * */
 
                     switch (transition.getReadCharacter()) {
-                        case 'a', 'b', 'c' -> INPUTMONEYREGISTER.add();
-                        case 'F' -> ITEMREGISTERMAP.get("F").add();
-                        case 'K' -> ITEMREGISTERMAP.get("K").add();
-                        case 'N' -> ITEMREGISTERMAP.get("N").add();
-                        case 'S' -> ITEMREGISTERMAP.get("S").add();
+                        case 'a':
+
+                            INPUTMONEYREGISTER.add();
+                            totalInput += new Money().getValue("a");
+                            break;
+                        case 'b':
+
+                            INPUTMONEYREGISTER.add();
+                            totalInput += new Money().getValue("b");
+                            break;
+                        case 'c':
+
+                            INPUTMONEYREGISTER.add();
+                            totalInput += new Money().getValue("c");
+                            break;
+                        case 'F' :
+                            ITEMREGISTERMAP.get("F").add();
+                            totalCost += new Money().getPrice("F");
+                            break;
+
+                        case 'K' :
+                            ITEMREGISTERMAP.get("K").add();
+                            totalCost += new Money().getPrice("K");
+                            break;
+
+                        case 'N' :
+                            ITEMREGISTERMAP.get("N").add();
+                            totalCost += new Money().getPrice("N");
+                            break;
+
+                        case 'S' :
+                            ITEMREGISTERMAP.get("S").add();
+                            totalCost += new Money().getPrice("S");
+                            break;
                     }
 
                     // If input is accepted
@@ -202,40 +226,15 @@ public class TuringMachine {
 
     public void purchaseItem() throws  InsufficientFundsException{
 
-        int total = 0;
-        for(Map.Entry<String, Register> s: ITEMREGISTERMAP.entrySet())
-            total += new Money().getPrice(s.getKey());
-            //s.getValue().getStoredValue();
-        System.out.println("Total Cost = " + total);
+        if(totalInput<totalCost){
+            throw new InsufficientFundsException("Insufficient Funds Total Input = "  + totalInput + " Total Cost = " + totalCost);
+        }
 
+        new FileHandler().logPurchase(new Purchase(totalInput,"NKS"));
 
-
+        System.out.println(YELLOW_BOLD + "Total Input = " + totalInput);
+        System.out.println("Total Cost = " + totalCost + RESET);
     }
-
-    /*public void purchaseItem() throws InsufficientFundsException{
-
-        double costForItems = items.getCostForItems(sb.toString());
-        double moneyGiven = items.getTotalInput(sb.toString());
-        RegisterTest moneyRegisterTest = new RegisterTest();
-        RegisterTest.ItemRegisterTest itemRegister = new RegisterTest.ItemRegisterTest();
-
-        moneyRegisterTest.setStoredValue(moneyGiven);
-        itemRegister.setStoredValue(costForItems);
-
-        if(costForItems>moneyGiven){
-            throw  new InsufficientFundsException("Please Enter more money and try again");
-        }
-
-        else if(costForItems == moneyGiven){
-            //dispense item
-        }else if (costForItems <= moneyGiven){
-            //dispense item
-            //give change
-        }
-
-
-        //TODO figure out a way to purchase this item and to dispense the individual items, and another thing we need to give the user their change
-    }*/
 
     public void dispenseItems(){
 
