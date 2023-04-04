@@ -8,13 +8,23 @@ import static org.example.Model.Tape.BLANK;
 
 public class TuringMachine {
     private String input;
-    private Tape tape = new Tape();
+    private static final Tape tape = new Tape();
     private ArrayList <Transition> stateRules;
     private String startState;
     private String currentState;
-    private Register  totalMoney;
-    private Register.ItemRegister items = new Register.ItemRegister();
+    private RegisterTest totalMoney;
+    private RegisterTest.ItemRegisterTest items = new RegisterTest.ItemRegisterTest();
     private StringBuilder sb = new StringBuilder();
+
+    private static final Register INPUTMONEYREGISTER = new Register();
+
+    private static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
+
+/*    private static final Register FITEMREGISTER = new Register();
+    private static final Register SITEMREGISTER = new Register();
+    private static final Register KITEMREGISTER = new Register();
+    private static final Register NITEMREGISTER = new Register();*/
+
 
 
     private double totalItemCost;
@@ -30,13 +40,19 @@ public class TuringMachine {
 
     // This constructor show be used in a loop to keep the programing running after an exception is thrown
     public TuringMachine(String input) {
+        ITEMREGISTERMAP.put("K",new Register());
+        ITEMREGISTERMAP.put("F",new Register());
+        ITEMREGISTERMAP.put("N",new Register());
+        ITEMREGISTERMAP.put("S",new Register());
+
+
 
         boolean success = false;
         try {
             validateInput(input);
             success = true;
         }catch (Tape.InvalidInputException e){
-            System.err.println(e);
+            System.err.println(e.toString());
             currentState = "qr";
             System.err.println("Reject State: Current State [ " + currentState+  " ] ");
 
@@ -48,6 +64,10 @@ public class TuringMachine {
             setStateRules();
             try {
                 start();
+
+                for(Map.Entry<String, Register> s: ITEMREGISTERMAP.entrySet())
+                    System.out.println(s.getKey()  + " = " + s.getValue());
+
             } catch (Tape.InvalidInputException e) {
                System.err.println(e);
             }
@@ -78,6 +98,8 @@ public class TuringMachine {
         stateRules.add(new Transition("q2","q2",'K','K',"R"));
         stateRules.add(new Transition("q2","q2",'F','F',"R"));
         stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
+
+        //Ignore Just testing something
         stateRules.add(new Transition("qa","qa"));
 
 
@@ -123,11 +145,26 @@ public class TuringMachine {
                     System.out.println(CYAN_BOLD+ "[Σ] " + transition.toString()+"\n" + RESET);
                     tape.setHead(transition.getWriteCharacter());
 
-                    // move tape
+                    /*
+                    * Here we specify the movement of the Tape head left or right depending on the state
+                    * */
                     if(Objects.equals(transition.getDirection(), "R")){
                         tape.moveHeadRight();
                     } else if (Objects.equals(transition.getDirection(), "L")) {
                         tape.moveHeadLeft();
+                    }
+
+                    /*
+                    * Performing computations with the registers
+                    *
+                    * */
+
+                    switch (transition.getReadCharacter()) {
+                        case 'a', 'b', 'c' -> INPUTMONEYREGISTER.add();
+                        case 'F' -> ITEMREGISTERMAP.get("F").add();
+                        case 'K' -> ITEMREGISTERMAP.get("K").add();
+                        case 'N' -> ITEMREGISTERMAP.get("N").add();
+                        case 'S' -> ITEMREGISTERMAP.get("S").add();
                     }
 
                     // If input is accepted
@@ -163,14 +200,26 @@ public class TuringMachine {
         return transition;
     }
 
-    public void purchaseItem() throws InsufficientFundsException{
+    public void purchaseItem() throws  InsufficientFundsException{
+
+        int total = 0;
+        for(Map.Entry<String, Register> s: ITEMREGISTERMAP.entrySet())
+            total += new Money().getPrice(s.getKey());
+            //s.getValue().getStoredValue();
+        System.out.println("Total Cost = " + total);
+
+
+
+    }
+
+    /*public void purchaseItem() throws InsufficientFundsException{
 
         double costForItems = items.getCostForItems(sb.toString());
         double moneyGiven = items.getTotalInput(sb.toString());
-        Register moneyRegister = new Register();
-        Register.ItemRegister itemRegister = new Register.ItemRegister();
+        RegisterTest moneyRegisterTest = new RegisterTest();
+        RegisterTest.ItemRegisterTest itemRegister = new RegisterTest.ItemRegisterTest();
 
-        moneyRegister.setStoredValue(moneyGiven);
+        moneyRegisterTest.setStoredValue(moneyGiven);
         itemRegister.setStoredValue(costForItems);
 
         if(costForItems>moneyGiven){
@@ -186,7 +235,7 @@ public class TuringMachine {
 
 
         //TODO figure out a way to purchase this item and to dispense the individual items, and another thing we need to give the user their change
-    }
+    }*/
 
     public void dispenseItems(){
 
