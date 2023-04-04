@@ -18,7 +18,7 @@ public final class VendingMachine implements Serializable {
         napkinCount = 20;
         spoonCount = 20;
         knifeCount = 20;
-        balance = 99999;
+        balance = 1000;
     }
 
     public VendingMachine(int forkCount, int napkinCount, int spoonCount, int knifeCount, int balance) {

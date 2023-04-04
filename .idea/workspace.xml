@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Error with file handing  java.io.StreamCorruptedException: invalid type code: AC">
+    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="added purchase method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" afterDir="false" />
     </list>
@@ -218,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680631064964</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="added purchase method">
+      <created>1680642522209</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680642522209</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,7 +249,8 @@
     <MESSAGE value="Added Init registers" />
     <MESSAGE value="Corrected Register, Added logging" />
     <MESSAGE value="Error with file handing  java.io.StreamCorruptedException: invalid type code: AC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error with file handing  java.io.StreamCorruptedException: invalid type code: AC" />
+    <MESSAGE value="added purchase method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added purchase method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

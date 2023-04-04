@@ -13,8 +13,6 @@ public class TuringMachine {
     private ArrayList <Transition> stateRules;
     private String startState;
     private String currentState;
-    private RegisterTest totalMoney;
-    private RegisterTest.ItemRegisterTest items = new RegisterTest.ItemRegisterTest();
     private StringBuilder sb = new StringBuilder();
     private static final Register INPUTMONEYREGISTER = new Register();
     private static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
@@ -285,7 +283,15 @@ public class TuringMachine {
             }
         }
 
-
+        if (totalInput > totalCost){
+            //dispense Change
+            vendingMachine.setBalance(vendingMachine.getBalance() + totalInput);
+            vendingMachine.setBalance(vendingMachine.getBalance() - (totalInput-totalCost));
+            System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here is your change: " + (totalInput-totalCost) + RESET);
+        }else{
+            vendingMachine.setBalance(vendingMachine.getBalance() + totalInput);
+        }
+        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Thank you for your purchase " + RESET);
 
 
         System.out.println(YELLOW_BOLD + "Total Input = " + totalInput+ RESET);
