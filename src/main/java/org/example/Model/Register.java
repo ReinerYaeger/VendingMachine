@@ -25,6 +25,14 @@ public class Register {
         return true;
     }
 
+    public boolean subtractMany(int values){
+        for (int i = 0 ; i <= values; i++)
+            if (!subtract()){
+                return false;
+            }
+        return true;
+    }
+
     public int getStoredValue() {
         return storedValue;
     }

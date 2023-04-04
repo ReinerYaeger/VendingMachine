@@ -203,6 +203,8 @@ public class TuringMachine {
                     // If input is accepted
                     if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() == BLANK){
                         System.out.println( GREEN_BOLD+ "[qa2] Restock: Accept State" + RESET);
+
+                        restock();
                         //TODO add code to restock register
                     }
 
@@ -263,8 +265,6 @@ public class TuringMachine {
                 }
         }*/
 
-
-
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
         for (Map.Entry<String,Register> map : ITEMREGISTERMAP.entrySet()){
             switch (map.getKey()) {
@@ -301,18 +301,24 @@ public class TuringMachine {
         }
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Thank you for your purchase " + RESET);
 
-
-
         System.out.println(YELLOW_BOLD + "Total Input = " + totalInput+ RESET);
         System.out.println(YELLOW_BOLD + "Total Cost = " + totalCost + RESET);
         System.out.println(YELLOW_BOLD + vendingMachine.toString() + RESET);
     }
 
-    public void dispenseItems(){
-
-    }
-
     public void restock(){
+
+        /*While working this doesn't use the registers, based on the requirements it seems as if we
+        * have the option to do so
+        * Working with the register is implemented above which shows our ability to do so*/
+        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Restocking" + RESET);
+
+        vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() + 1);
+        vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() + 2);
+        vendingMachine.setForkCount(vendingMachine.getForkCount() + 2);
+        vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() + 3);
+
+        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Item Stock " + vendingMachine.toString() + RESET);
 
     }
 
