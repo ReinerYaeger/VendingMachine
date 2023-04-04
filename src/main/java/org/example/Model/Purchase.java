@@ -1,9 +1,10 @@
 package org.example.Model;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class Purchase {
+class Purchase implements Serializable{
     private int totalMoney;
     private String itemsPurchased;
     private Date timeStamp;
@@ -13,6 +14,30 @@ class Purchase {
         this.totalMoney = totalMoney;
         this.itemsPurchased = itemsPurchased;
         timeStamp = new Date();
+    }
+
+    public int getTotalMoney() {
+        return totalMoney;
+    }
+
+    public void setTotalMoney(int totalMoney) {
+        this.totalMoney = totalMoney;
+    }
+
+    public String getItemsPurchased() {
+        return itemsPurchased;
+    }
+
+    public void setItemsPurchased(String itemsPurchased) {
+        this.itemsPurchased = itemsPurchased;
+    }
+
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     @Override

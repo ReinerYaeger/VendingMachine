@@ -10,6 +10,8 @@ public class FileHandler {
 
     }
     public void saveToFile(VendingMachine vm){
+
+        System.out.println(PURPLE +" [✎] Writing to vmdb ... " +RESET);
         try {
             FileOutputStream f = new FileOutputStream(new File("vmdb.txt"));
             ObjectOutputStream o = new ObjectOutputStream(f);
@@ -27,15 +29,14 @@ public class FileHandler {
     }
 
     public void readFromFile(){
+        System.out.println(PURPLE +" [✎] Reading form vmdb ... " +RESET);
 
         try {
-            FileInputStream fi = new FileInputStream(new File("myObjects.txt"));
-            ObjectInputStream oi = new ObjectInputStream(fi);
+            FileInputStream fi = new FileInputStream(new File("vmdb.txt"));
+            final ObjectInputStream oi = new ObjectInputStream(fi);
 
             // Read objects
             VendingMachine vm = (VendingMachine) oi.readObject();
-
-            System.out.println(BLACK_BOLD + WHITE_BACKGROUND + "Reading From File" + vm.toString() + RESET);
 
             oi.close();
             fi.close();
@@ -49,15 +50,34 @@ public class FileHandler {
     }
 
     public void logPurchase(Purchase purchase){
+        System.out.println(PURPLE +" [✎] Writing to Purchase Log ... ");
 
-        try(Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("log.txt",true), "UTF-8")))
-        {
-            writer.write(purchase.toString() +"\n");
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("log.txt",true))) {
+            objectOutputStream.writeObject(purchase);
+            objectOutputStream.reset();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        catch(IOException ex)
-        {
-            ex.printStackTrace();
+    }
+
+
+    public int calculateTotalPurchase(){
+
+        System.out.println(PURPLE +" [✎] Reading from vmdb ... " +RESET);
+
+        int totalMoney = 0;
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("log.txt"))) {
+            while (true) {
+                Purchase purchase = (Purchase) objectInputStream.readObject();
+                totalMoney += purchase.getTotalMoney();
+            }
+        } catch (EOFException e) {
+            // End of file reached
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
 
+        return totalMoney;
     }
 }

@@ -232,11 +232,17 @@ public class TuringMachine {
 
         new FileHandler().logPurchase(new Purchase(totalInput,"NKS"));
 
+        System.out.println(new FileHandler().calculateTotalPurchase());
+
         System.out.println(YELLOW_BOLD + "Total Input = " + totalInput);
         System.out.println("Total Cost = " + totalCost + RESET);
     }
 
     public void dispenseItems(){
+
+    }
+
+    public void restock(){
 
     }
 
