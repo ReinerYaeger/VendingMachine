@@ -1,13 +1,17 @@
 package org.example.Model;
 import java.io.*;
 
-public class VendingMachine implements Serializable {
+public final class VendingMachine implements Serializable {
 
     private int forkCount;
     private int napkinCount;
     private int spoonCount;
     private int knifeCount;
     private int balance;
+
+    /*
+    * The vending machine class should read from the file to determine the amount of items and money there area in the registers
+    * */
 
     public VendingMachine(){
         forkCount = 20;

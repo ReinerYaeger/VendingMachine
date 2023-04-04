@@ -3,6 +3,10 @@ package org.example.Model;
 public class Register {
     private int storedValue;
 
+    public Register(int value){
+        storedValue = value;
+    }
+
     public Register(){
         storedValue = 0;
     }
@@ -10,6 +14,8 @@ public class Register {
     public void add(){
         storedValue ++;
     }
+
+
 
     public boolean subtract(){
         if(storedValue <= 0){

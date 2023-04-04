@@ -21,6 +21,10 @@ public class TuringMachine {
     private int totalCost;
     private int totalInput;
 
+    private final StringBuilder moneyGiven = new StringBuilder();
+    private final  StringBuilder itemsRequested = new StringBuilder();
+    private static final VendingMachine vendingMachine = new VendingMachine();
+
 /*    private static final Register FITEMREGISTER = new Register();
     private static final Register SITEMREGISTER = new Register();
     private static final Register KITEMREGISTER = new Register();
@@ -159,35 +163,42 @@ public class TuringMachine {
 
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("a");
+                            moneyGiven.append("a");
                             break;
                         case 'b':
 
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("b");
+                            moneyGiven.append("b");
                             break;
                         case 'c':
 
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("c");
+                            moneyGiven.append("c");
                             break;
                         case 'F' :
                             ITEMREGISTERMAP.get("F").add();
                             totalCost += new Money().getPrice("F");
+                            itemsRequested.append("F");
                             break;
 
                         case 'K' :
                             ITEMREGISTERMAP.get("K").add();
                             totalCost += new Money().getPrice("K");
+                            itemsRequested.append("K");
                             break;
 
                         case 'N' :
                             ITEMREGISTERMAP.get("N").add();
                             totalCost += new Money().getPrice("N");
+                            itemsRequested.append("N");
                             break;
 
                         case 'S' :
                             ITEMREGISTERMAP.get("S").add();
                             totalCost += new Money().getPrice("S");
+                            itemsRequested.append("S");
                             break;
                     }
 
@@ -230,12 +241,56 @@ public class TuringMachine {
             throw new InsufficientFundsException("Insufficient Funds Total Input = "  + totalInput + " Total Cost = " + totalCost);
         }
 
-        new FileHandler().logPurchase(new Purchase(totalInput,"NKS"));
+        /*new FileHandler().logPurchase(new Purchase(totalInput,"NKS"));*/
 
         System.out.println(new FileHandler().calculateTotalPurchase());
 
-        System.out.println(YELLOW_BOLD + "Total Input = " + totalInput);
-        System.out.println("Total Cost = " + totalCost + RESET);
+        /*
+        *  Subtracting the items from the stock
+        * */
+
+
+        /*
+        * Save the Result to the File
+        * */
+        /*int n =0,s=0,k=0,f = 0;*/
+        /*String inputString = itemsRequested.toString();
+
+        for (char c :  inputString.toCharArray()) {
+                switch (c) {
+                    case 'F' -> vendingMachine.setForkCount(vendingMachine.getForkCount() - 1);
+                    case 'N' -> vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - 1);
+                    case 'S' -> vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - 1);
+                    case 'K' -> vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - 1);
+                }
+        }*/
+
+
+
+        for (Map.Entry<String,Register> map : ITEMREGISTERMAP.entrySet()){
+
+            switch (map.getKey()) {
+                case "F" :
+                    vendingMachine.setForkCount(vendingMachine.getForkCount() - map.getValue().getStoredValue());
+                    break;
+                case "N" :
+                    vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - map.getValue().getStoredValue());
+                    break;
+                case "S" :
+                    vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - map.getValue().getStoredValue());
+                    break;
+                case "K" :
+                    vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - map.getValue().getStoredValue());
+                    break;
+            }
+        }
+
+
+
+
+        System.out.println(YELLOW_BOLD + "Total Input = " + totalInput+ RESET);
+        System.out.println(YELLOW_BOLD + "Total Cost = " + totalCost + RESET);
+        System.out.println(YELLOW_BOLD + vendingMachine.toString() + RESET);
     }
 
     public void dispenseItems(){

@@ -52,12 +52,12 @@ public class FileHandler {
     public void logPurchase(Purchase purchase){
         System.out.println(PURPLE +" [✎] Writing to Purchase Log ... ");
 
-        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("log.txt",true))) {
+        /*try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("log.txt",true))) {
             objectOutputStream.writeObject(purchase);
             objectOutputStream.reset();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 
@@ -65,12 +65,12 @@ public class FileHandler {
 
         System.out.println(PURPLE +" [✎] Reading from vmdb ... " +RESET);
 
-        int totalMoney = 0;
+        /*int totalMoney = 0;
 
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("log.txt"))) {
             while (true) {
-                Purchase purchase = (Purchase) objectInputStream.readObject();
-                totalMoney += purchase.getTotalMoney();
+               // Purchase purchase = (Purchase) objectInputStream.readObject();
+               // totalMoney += purchase.getTotalMoney();
             }
         } catch (EOFException e) {
             // End of file reached
@@ -78,6 +78,7 @@ public class FileHandler {
             e.printStackTrace();
         }
 
-        return totalMoney;
+        return totalMoney;*/
+        return 0;
     }
 }
