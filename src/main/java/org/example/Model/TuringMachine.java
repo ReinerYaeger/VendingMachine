@@ -128,9 +128,6 @@ public class TuringMachine {
 
         Transition transition = null;
 
-
-
-
         for(Transition rule : stateRules){
 
             if(Objects.equals(rule.getCurrentState(), currentState)){
@@ -162,35 +159,41 @@ public class TuringMachine {
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("a");
                             moneyGiven.append("a");
+                            currentState = transition.getNextState();
                             break;
                         case 'b':
 
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("b");
                             moneyGiven.append("b");
+                            currentState = transition.getNextState();
                             break;
                         case 'c':
 
                             INPUTMONEYREGISTER.add();
                             totalInput += new Money().getValue("c");
                             moneyGiven.append("c");
+                            currentState = transition.getNextState();
                             break;
                         case 'F' :
                             ITEMREGISTERMAP.get("F").add();
                             totalCost += new Money().getPrice("F");
                             itemsRequested.append("F");
+                            currentState = transition.getNextState();
                             break;
 
                         case 'K' :
                             ITEMREGISTERMAP.get("K").add();
                             totalCost += new Money().getPrice("K");
                             itemsRequested.append("K");
+                            currentState = transition.getNextState();
                             break;
 
                         case 'N' :
                             ITEMREGISTERMAP.get("N").add();
                             totalCost += new Money().getPrice("N");
                             itemsRequested.append("N");
+                            currentState = transition.getNextState();
                             break;
 
                         case 'S' :
