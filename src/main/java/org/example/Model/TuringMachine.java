@@ -35,6 +35,12 @@ public class TuringMachine {
         }
     }
 
+    static  class LowStockException extends Exception{
+        public LowStockException (String str){
+            super(str);
+        }
+    }
+
 
 
     // This constructor show be used in a loop to keep the programing running after an exception is thrown
@@ -218,7 +224,7 @@ public class TuringMachine {
 
                         try {
                             purchaseItem();
-                        }catch (InsufficientFundsException e){
+                        }catch (InsufficientFundsException | LowStockException e){
                             System.err.println(e);
                         }
                         //totalItemCost()
@@ -238,7 +244,7 @@ public class TuringMachine {
         return transition;
     }
 
-    public void purchaseItem() throws  InsufficientFundsException{
+    public void purchaseItem() throws InsufficientFundsException, LowStockException {
 
         if(totalInput<totalCost){
             throw new InsufficientFundsException("Insufficient Funds Total Input = "  + totalInput + " Total Cost = " + totalCost);
@@ -256,41 +262,43 @@ public class TuringMachine {
         /*
         * Save the Result to the File
         * */
-        /*int n =0,s=0,k=0,f = 0;*/
-        /*String inputString = itemsRequested.toString();
-
-        for (char c :  inputString.toCharArray()) {
-                switch (c) {
-                    case 'F' -> vendingMachine.setForkCount(vendingMachine.getForkCount() - 1);
-                    case 'N' -> vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - 1);
-                    case 'S' -> vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - 1);
-                    case 'K' -> vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - 1);
-                }
-        }*/
 
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
         for (Map.Entry<String,Register> map : ITEMREGISTERMAP.entrySet()){
             switch (map.getKey()) {
-                case "F" :
-                    if(map.getValue().getStoredValue() !=0)
-                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Fork(s)"  + RESET);
-                    vendingMachine.setForkCount(vendingMachine.getForkCount() - map.getValue().getStoredValue());
-                    break;
-                case "N" :
-                    if(map.getValue().getStoredValue() !=0)
-                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Napkin(s)"  + RESET);
-                    vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - map.getValue().getStoredValue());
-                    break;
-                case "S" :
-                    if(map.getValue().getStoredValue() !=0)
-                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Spoon(s)"  + RESET);
-                    vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - map.getValue().getStoredValue());
-                    break;
-                case "K" :
-                    if(map.getValue().getStoredValue() !=0)
-                        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] [ "+map.getValue().getStoredValue() +" ] Knife(ves)"  + RESET);
-                    vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - map.getValue().getStoredValue());
-                    break;
+                case "F" -> {
+
+                    if (vendingMachine.getForkCount() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Fork(s)" + RESET);
+                        vendingMachine.setForkCount(vendingMachine.getForkCount() - map.getValue().getStoredValue());
+                    } else {
+                        throw new LowStockException("Please Contact your local Technician for a restock");
+                    }
+                }
+                case "N" -> {
+                    if (vendingMachine.getNapkinCount() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Napkin(s)" + RESET);
+                        vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - map.getValue().getStoredValue());
+                    } else {
+                        throw new LowStockException("Please Contact your local Technician for a restock");
+                    }
+                }
+                case "S" -> {
+                    if (vendingMachine.getSpoonCount() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Spoon(s)" + RESET);
+                        vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - map.getValue().getStoredValue());
+                    } else {
+                        throw new LowStockException("Please Contact your local Technician for a restock");
+                    }
+                }
+                case "K" -> {
+                    if (vendingMachine.getKnifeCount() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Knife(ves)" + RESET);
+                        vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - map.getValue().getStoredValue());
+                    } else {
+                        throw new LowStockException("Please Contact your local Technician for a restock");
+                    }
+                }
             }
         }
 
