@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Fixed Logic error with transition">
+    <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Fixed Logic error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680649302167</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed Logic error">
+      <created>1680665899571</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680665899571</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,35 +285,21 @@
     <MESSAGE value="added purchase method" />
     <MESSAGE value="added restock" />
     <MESSAGE value="Fixed Logic error with transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Logic error with transition" />
+    <MESSAGE value="Fixed Logic error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Logic error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>268</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>276</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
           <line>267</line>
-          <option name="timeStamp" value="40" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>266</line>
-          <option name="timeStamp" value="41" />
+          <line>274</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,6 +5,10 @@ package org.example.Model;public class Main {
         tm = new TuringMachine("cbaSK");
         tm = new TuringMachine("dNKF");
         tm = new TuringMachine("cN");
+
+        tm = new TuringMachine("ccccccNNKFNNF");
+
         tm = new TuringMachine("NKSFFSKS");
+
     }
 }

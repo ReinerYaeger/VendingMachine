@@ -9,13 +9,13 @@ import static org.example.Model.Tape.BLANK;
 
 public class TuringMachine {
     private String input;
-    private static final Tape tape = new Tape();
+    public static final Tape tape = new Tape();
     private ArrayList <Transition> stateRules;
     private String startState;
     private String currentState;
     private StringBuilder sb = new StringBuilder();
-    private static final Register INPUTMONEYREGISTER = new Register();
-    private static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
+    public static final Register INPUTMONEYREGISTER = new Register();
+    public static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
     private int totalCost;
     private int totalInput;
 
