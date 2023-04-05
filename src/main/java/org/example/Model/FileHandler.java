@@ -52,12 +52,12 @@ public class FileHandler {
     public void logPurchase(Purchase purchase){
         System.out.println(PURPLE +" [✎] Writing to Purchase Log ... ");
 
-        /*try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("log.txt",true))) {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("log.txt",true))) {
             objectOutputStream.writeObject(purchase);
             objectOutputStream.reset();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
 

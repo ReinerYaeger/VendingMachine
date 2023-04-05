@@ -9,7 +9,7 @@ public final class VendingMachine implements Serializable {
     private int knifeCount;
     private int balance;
 
-    /*
+    /*//TODO
     * The vending machine class should read from the file to determine the amount of items and money there area in the registers
     * */
 

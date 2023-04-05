@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Fixed Logic error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680665899571</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed Logic error">
+      <created>1680697702254</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680697702254</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -293,13 +303,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>267</line>
-          <option name="timeStamp" value="43" />
+          <line>285</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>274</line>
-          <option name="timeStamp" value="44" />
+          <line>277</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
+          <line>266</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
+          <line>267</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

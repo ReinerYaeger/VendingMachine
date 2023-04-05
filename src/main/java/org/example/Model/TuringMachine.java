@@ -1,6 +1,5 @@
 package org.example.Model;
 
-import java.io.File;
 import java.util.*;
 
 import static org.example.Model.ConsoleColors.*;
@@ -9,20 +8,20 @@ import static org.example.Model.Tape.BLANK;
 
 public class TuringMachine {
     private String input;
-    public static final Tape tape = new Tape();
-    private ArrayList <Transition> stateRules;
+
     private String startState;
     private String currentState;
     private StringBuilder sb = new StringBuilder();
-    public static final Register INPUTMONEYREGISTER = new Register();
-    public static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
+
     private int totalCost;
     private int totalInput;
-
     private final StringBuilder moneyGiven = new StringBuilder();
     private final  StringBuilder itemsRequested = new StringBuilder();
-    private static final VendingMachine vendingMachine = new VendingMachine();
-
+    public static final VendingMachine VENDINGMACHINE = new VendingMachine();
+    public static final Tape TAPE = new Tape();
+    public static final ArrayList <Transition> STATERULES = new ArrayList<>();
+    public static final Register INPUTMONEYREGISTER = new Register();
+    public static final Map<String,Register> ITEMREGISTERMAP = new HashMap<String,Register>();
 /*    private static final Register FITEMREGISTER = new Register();
     private static final Register SITEMREGISTER = new Register();
     private static final Register KITEMREGISTER = new Register();
@@ -42,7 +41,9 @@ public class TuringMachine {
     }
 
 
+    public TuringMachine(){
 
+    }
     // This constructor show be used in a loop to keep the programing running after an exception is thrown
     public TuringMachine(String input) {
         ITEMREGISTERMAP.put("K",new Register());
@@ -64,7 +65,7 @@ public class TuringMachine {
         }
 
         if(success){
-            tape.input(input);
+            TAPE.input(input);
             //welcomeText();
             setStateRules();
             try {
@@ -78,44 +79,43 @@ public class TuringMachine {
     public void setStateRules(){
 
         //acceptable String Transitions reject everything else
-        stateRules = new ArrayList<>();
         startState = "q0";
-        stateRules.add(new Transition("q0","q1",'a','a',"R"));
-        stateRules.add(new Transition("q0","q1",'b','b',"R"));
-        stateRules.add(new Transition("q0","q1",'c','c',"R"));
+        STATERULES.add(new Transition("q0","q1",'a','a',"R"));
+        STATERULES.add(new Transition("q0","q1",'b','b',"R"));
+        STATERULES.add(new Transition("q0","q1",'c','c',"R"));
 
 
-        stateRules.add(new Transition("q1","q1",'a','a',"R"));
-        stateRules.add(new Transition("q1","q1",'b','b',"R"));
-        stateRules.add(new Transition("q1","q1",'c','C',"R"));
-        stateRules.add(new Transition("q1","q2",'N','N',"R"));
-        stateRules.add(new Transition("q1","q2",'F','F',"R"));
-        stateRules.add(new Transition("q1","q2",'S','S',"R"));
-        stateRules.add(new Transition("q1","q2",'K','K',"R"));
+        STATERULES.add(new Transition("q1","q1",'a','a',"R"));
+        STATERULES.add(new Transition("q1","q1",'b','b',"R"));
+        STATERULES.add(new Transition("q1","q1",'c','C',"R"));
+        STATERULES.add(new Transition("q1","q2",'N','N',"R"));
+        STATERULES.add(new Transition("q1","q2",'F','F',"R"));
+        STATERULES.add(new Transition("q1","q2",'S','S',"R"));
+        STATERULES.add(new Transition("q1","q2",'K','K',"R"));
 
 
-        stateRules.add(new Transition("q2","q2",'N','N',"R"));
-        stateRules.add(new Transition("q2","q2",'S','S',"R"));
-        stateRules.add(new Transition("q2","q2",'K','K',"R"));
-        stateRules.add(new Transition("q2","q2",'F','F',"R"));
-        stateRules.add(new Transition("q2","qa",BLANK,BLANK,"R"));
+        STATERULES.add(new Transition("q2","q2",'N','N',"R"));
+        STATERULES.add(new Transition("q2","q2",'S','S',"R"));
+        STATERULES.add(new Transition("q2","q2",'K','K',"R"));
+        STATERULES.add(new Transition("q2","q2",'F','F',"R"));
+        STATERULES.add(new Transition("q2","qa",BLANK,BLANK,"R"));
 
         //Ignore Just testing something
-        stateRules.add(new Transition("qa","qa"));
+        STATERULES.add(new Transition("qa","qa"));
 
 
         //Restock String
-        stateRules.add(new Transition("q0","q5",'N','N',"R"));
-        stateRules.add(new Transition("q5","q6",'K','K',"R"));
-        stateRules.add(new Transition("q6","q7",'S','S',"R"));
-        stateRules.add(new Transition("q7","q8",'F','F',"R"));
-        stateRules.add(new Transition("q8","q9",'F','F',"R"));
-        stateRules.add(new Transition("q9","q10",'S','S',"R"));
-        stateRules.add(new Transition("q10","q11",'K','K',"R"));
-        stateRules.add(new Transition("q11","q12",'S','S',"R"));
+        STATERULES.add(new Transition("q0","q5",'N','N',"R"));
+        STATERULES.add(new Transition("q5","q6",'K','K',"R"));
+        STATERULES.add(new Transition("q6","q7",'S','S',"R"));
+        STATERULES.add(new Transition("q7","q8",'F','F',"R"));
+        STATERULES.add(new Transition("q8","q9",'F','F',"R"));
+        STATERULES.add(new Transition("q9","q10",'S','S',"R"));
+        STATERULES.add(new Transition("q10","q11",'K','K',"R"));
+        STATERULES.add(new Transition("q11","q12",'S','S',"R"));
 
         //Accept restock input
-        stateRules.add(new Transition("q12","qa2",BLANK,BLANK,"R"));
+        STATERULES.add(new Transition("q12","qa2",BLANK,BLANK,"R"));
     }
 
     public void start() throws Tape.InvalidInputException{
@@ -134,23 +134,23 @@ public class TuringMachine {
 
         Transition transition = null;
 
-        for(Transition rule : stateRules){
+        for(Transition rule : STATERULES){
 
             if(Objects.equals(rule.getCurrentState(), currentState)){
-                if (rule.getReadCharacter() == tape.getHead() ){
+                if (rule.getReadCharacter() == TAPE.getHead() ){
                     transition = rule;
                     sb.append(transition.getWriteCharacter());
 
                     System.out.println(CYAN_BOLD+ "[Σ] " + transition.toString()+"\n" + RESET);
-                    tape.setHead(transition.getWriteCharacter());
+                    TAPE.setHead(transition.getWriteCharacter());
 
                     /*
                     * Here we specify the movement of the Tape head left or right depending on the state
                     * */
                     if(Objects.equals(transition.getDirection(), "R")){
-                        tape.moveHeadRight();
+                        TAPE.moveHeadRight();
                     } else if (Objects.equals(transition.getDirection(), "L")) {
-                        tape.moveHeadLeft();
+                        TAPE.moveHeadLeft();
                     }
 
                     /*
@@ -210,14 +210,14 @@ public class TuringMachine {
                     }
 
                     // If input is accepted
-                    if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() == BLANK){
+                    if(Objects.equals(transition.getNextState(), "qa2") & TAPE.getHead() == BLANK){
                         System.out.println( GREEN_BOLD+ "[qa2] Restock: Accept State" + RESET);
 
                         restock();
                         //TODO add code to restock register
                     }
 
-                    else if(Objects.equals(transition.getNextState(), "qa")& tape.getHead() == BLANK){
+                    else if(Objects.equals(transition.getNextState(), "qa")& TAPE.getHead() == BLANK){
                         System.out.println(GREEN_BOLD + "[qa] Purchase: Accept State" +  RESET);
 
                         System.out.println(sb.toString());
@@ -232,9 +232,9 @@ public class TuringMachine {
                         //TODO add code to dispense item to use
                     }
 
-/*                    if(Objects.equals(transition.getNextState(), "qa2") & tape.getHead() !=   BLANK){
+/*                    if(Objects.equals(transition.getNextState(), "qa2") & TAPE.getHead() !=   BLANK){
                         throw new Tape.InvalidInputException("There was an error in the code");
-                    } else if (Objects.equals(transition.getNextState(), "qa") & tape.getHead() != BLANK) {
+                    } else if (Objects.equals(transition.getNextState(), "qa") & TAPE.getHead() != BLANK) {
                         throw new Tape.InvalidInputException("There was an error in the code");
                     }*/
                 }
@@ -250,7 +250,7 @@ public class TuringMachine {
             throw new InsufficientFundsException("Insufficient Funds Total Input = "  + totalInput + " Total Cost = " + totalCost);
         }
 
-        /*new FileHandler().logPurchase(new Purchase(totalInput,"NKS"));*/
+        new FileHandler().logPurchase(new Purchase(totalInput,itemsRequested.toString()));
 
         System.out.println(new FileHandler().calculateTotalPurchase());
 
@@ -264,38 +264,38 @@ public class TuringMachine {
         * */
 
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
-        for (Map.Entry<String,Register> map : ITEMREGISTERMAP.entrySet()){
-            switch (map.getKey()) {
+        for (Map.Entry<String,Register> item : ITEMREGISTERMAP.entrySet()){
+            switch (item.getKey()) {
                 case "F" -> {
 
-                    if (vendingMachine.getForkCount() != 0) {
-                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Fork(s)" + RESET);
-                        vendingMachine.setForkCount(vendingMachine.getForkCount() - map.getValue().getStoredValue());
-                    } else {
+                    if (item.getValue().getStoredValue() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + item.getValue().getStoredValue() + " ] Fork(s)" + RESET);
+                        VENDINGMACHINE.setForkCount(VENDINGMACHINE.getForkCount() - item.getValue().getStoredValue());
+                    } else if (VENDINGMACHINE.getSpoonCount() == 0){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
                 }
                 case "N" -> {
-                    if (vendingMachine.getNapkinCount() != 0) {
-                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Napkin(s)" + RESET);
-                        vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() - map.getValue().getStoredValue());
-                    } else {
+                    if (item.getValue().getStoredValue() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + item.getValue().getStoredValue() + " ] Napkin(s)" + RESET);
+                        VENDINGMACHINE.setNapkinCount(VENDINGMACHINE.getNapkinCount() - item.getValue().getStoredValue());
+                    } else if (VENDINGMACHINE.getSpoonCount() == 0){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
                 }
                 case "S" -> {
-                    if (vendingMachine.getSpoonCount() != 0) {
-                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Spoon(s)" + RESET);
-                        vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() - map.getValue().getStoredValue());
-                    } else {
+                    if (item.getValue().getStoredValue() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + item.getValue().getStoredValue() + " ] Spoon(s)" + RESET);
+                        VENDINGMACHINE.setSpoonCount(VENDINGMACHINE.getSpoonCount() - item.getValue().getStoredValue());
+                    } else if (VENDINGMACHINE.getSpoonCount() == 0){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
                 }
                 case "K" -> {
-                    if (vendingMachine.getKnifeCount() != 0) {
-                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + map.getValue().getStoredValue() + " ] Knife(ves)" + RESET);
-                        vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() - map.getValue().getStoredValue());
-                    } else {
+                    if (item.getValue().getStoredValue() != 0) {
+                        System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + item.getValue().getStoredValue() + " ] Knife(ves)" + RESET);
+                        VENDINGMACHINE.setKnifeCount(VENDINGMACHINE.getKnifeCount() - item.getValue().getStoredValue());
+                    } else if (VENDINGMACHINE.getSpoonCount() == 0){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
                 }
@@ -304,32 +304,33 @@ public class TuringMachine {
 
         if (totalInput > totalCost){
             //dispense Change
-            vendingMachine.setBalance(vendingMachine.getBalance() + totalInput);
-            vendingMachine.setBalance(vendingMachine.getBalance() - (totalInput-totalCost));
+            VENDINGMACHINE.setBalance(VENDINGMACHINE.getBalance() + totalInput);
+            VENDINGMACHINE.setBalance(VENDINGMACHINE.getBalance() - (totalInput-totalCost));
             System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here is your change: " + (totalInput-totalCost) + RESET);
         }else{
-            vendingMachine.setBalance(vendingMachine.getBalance() + totalInput);
+            VENDINGMACHINE.setBalance(VENDINGMACHINE.getBalance() + totalInput);
         }
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Thank you for your purchase " + RESET);
 
         System.out.println(YELLOW_BOLD + "Total Input = " + totalInput+ RESET);
         System.out.println(YELLOW_BOLD + "Total Cost = " + totalCost + RESET);
-        System.out.println(YELLOW_BOLD + vendingMachine.toString() + RESET);
+        System.out.println(YELLOW_BOLD + VENDINGMACHINE.toString() + RESET);
+
+        new FileHandler().saveToFile(VENDINGMACHINE);
     }
 
     public void restock(){
 
-        /*While working this doesn't use the registers, based on the requirements it seems as if we
-        * have the option to do so
-        * Working with the register is implemented above which shows our ability to do so*/
+        /*While working this doesn't use the registers, based on the requirements we have the creative freedom in this matter,
+        * Register is implemented above which shows our ability to do so*/
         System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Restocking" + RESET);
 
-        vendingMachine.setNapkinCount(vendingMachine.getNapkinCount() + 1);
-        vendingMachine.setKnifeCount(vendingMachine.getKnifeCount() + 2);
-        vendingMachine.setForkCount(vendingMachine.getForkCount() + 2);
-        vendingMachine.setSpoonCount(vendingMachine.getSpoonCount() + 3);
+        VENDINGMACHINE.setNapkinCount(VENDINGMACHINE.getNapkinCount() + 1);
+        VENDINGMACHINE.setKnifeCount(VENDINGMACHINE.getKnifeCount() + 2);
+        VENDINGMACHINE.setForkCount(VENDINGMACHINE.getForkCount() + 2);
+        VENDINGMACHINE.setSpoonCount(VENDINGMACHINE.getSpoonCount() + 3);
 
-        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Item Stock " + vendingMachine.toString() + RESET);
+        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Item Stock " + VENDINGMACHINE.toString() + RESET);
 
     }
 
@@ -345,7 +346,7 @@ public class TuringMachine {
     }
 
     public void addStateRule(Transition transition){
-        stateRules.add(transition);
+        STATERULES.add(transition);
     }
 
     public String getInput() {
@@ -357,18 +358,15 @@ public class TuringMachine {
     }
 
     public ArrayList<Transition> getStateRules() {
-        return stateRules;
+        return STATERULES;
     }
 
-    public void setStateRules(ArrayList<Transition> stateRules) {
-        this.stateRules = stateRules;
-    }
 
     @Override
     public String toString() {
         return "TuringMachine{" +
                 "input='" + input + '\'' +
-                ", stateRules=" + stateRules +
+                ", STATERULES=" + STATERULES +
                 ", startState=" + startState +
                 ", currentState=" + currentState +
                 '}';
