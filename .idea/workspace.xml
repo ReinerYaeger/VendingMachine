@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="more or less presentation ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vmdb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vmdb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmdb.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680813466164</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="more or less presentation ready">
+      <created>1680815851757</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1680815851757</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,243 +343,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>354</line>
-          <option name="timeStamp" value="58" />
+          <line>53</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>344</line>
-          <option name="timeStamp" value="59" />
+          <line>235</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>345</line>
-          <option name="timeStamp" value="62" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>346</line>
-          <option name="timeStamp" value="63" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>350</line>
-          <option name="timeStamp" value="64" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>352</line>
-          <option name="timeStamp" value="65" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>353</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>276</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>277</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>278</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>292</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>293</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>295</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>297</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>296</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>298</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>299</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>302</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>303</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>317</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>316</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>315</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>309</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>307</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>306</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>310</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>311</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>312</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>314</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>313</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>320</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>321</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>323</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>324</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>326</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>327</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>328</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>329</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>333</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>332</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>289</line>
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>286</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>288</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>283</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>282</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>281</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>279</line>
-          <option name="timeStamp" value="120" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/VendingMachine.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -580,7 +384,7 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" line="321">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" line="322">
         <watch expression="items" />
       </inline-watch>
     </watches-manager>

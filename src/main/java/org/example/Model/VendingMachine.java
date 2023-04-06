@@ -13,12 +13,25 @@ public final class VendingMachine implements Serializable {
     * The vending machine class should read from the file to determine the amount of items and money there area in the registers
     * */
 
+    public boolean isVMDBFileExists() {
+        File file = new File("vmdb.txt");
+        return file.exists();
+    }
     public VendingMachine(){
-        forkCount = 20;
-        napkinCount = 20;
-        spoonCount = 20;
-        knifeCount = 20;
-        balance = 1000;
+
+        if(!isVMDBFileExists()) {
+            forkCount = 20;
+            napkinCount = 20;
+            spoonCount = 20;
+            knifeCount = 20;
+            balance = 1000;
+        }else{
+            forkCount = new FileHandler().readFromFile().getForkCount();
+            napkinCount = new FileHandler().readFromFile().getNapkinCount();
+            spoonCount = new FileHandler().readFromFile().getSpoonCount();
+            knifeCount = new FileHandler().readFromFile().getKnifeCount();
+            balance = new FileHandler().calculateTotalPurchase();
+        }
     }
 
     public VendingMachine(int forkCount, int napkinCount, int spoonCount, int knifeCount, int balance) {

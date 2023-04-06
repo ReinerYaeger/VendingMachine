@@ -17,7 +17,7 @@ public class TuringMachine {
     private int totalInput;
     private final StringBuilder moneyGiven = new StringBuilder();
     private final  StringBuilder itemsRequested = new StringBuilder();
-    public static final VendingMachine VENDINGMACHINE = new VendingMachine();
+    public static VendingMachine VENDINGMACHINE;
     public static Tape TAPE = new Tape();
     public static final ArrayList <Transition> STATERULES = new ArrayList<>();
     public static Register INPUTMONEYREGISTER = new Register();
@@ -51,6 +51,7 @@ public class TuringMachine {
         TAPE = new Tape();
         INPUTMONEYREGISTER = new Register();
         ITEMREGISTERMAP = new HashMap<String,Register>();
+        VENDINGMACHINE = new VendingMachine();
 
     }
     // This constructor show be used in a loop to keep the programing running after an exception is thrown
