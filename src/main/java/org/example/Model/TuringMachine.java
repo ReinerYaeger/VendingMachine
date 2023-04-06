@@ -40,6 +40,12 @@ public class TuringMachine {
         }
     }
 
+    static  class NoBalanceException extends Exception{
+        public NoBalanceException (String str){
+            super(str);
+        }
+    }
+
 
     public TuringMachine(){
         TAPE = new Tape();
@@ -227,7 +233,11 @@ public class TuringMachine {
                         try {
                             purchaseItem();
                             new FileHandler().saveToFile(VENDINGMACHINE);
-                        }catch (InsufficientFundsException | LowStockException e){
+                        }catch (InsufficientFundsException  e){
+                            System.err.println(e);
+                        } catch (NoBalanceException e) {
+                            System.err.println(e);
+                        } catch (LowStockException e) {
                             System.err.println(e);
                         }
                         break;
@@ -235,12 +245,6 @@ public class TuringMachine {
 
                         //TODO add code to dispense item to use
                     }
-
-/*                    if(Objects.equals(transition.getNextState(), "qa2") & TAPE.getHead() !=   BLANK){
-                        throw new Tape.InvalidInputException("There was an error in the code");
-                    } else if (Objects.equals(transition.getNextState(), "qa") & TAPE.getHead() != BLANK) {
-                        throw new Tape.InvalidInputException("There was an error in the code");
-                    }*/
                 }
             }
         }
@@ -248,10 +252,13 @@ public class TuringMachine {
         return transition;
     }
 
-    public void purchaseItem() throws InsufficientFundsException, LowStockException {
+    public void purchaseItem() throws InsufficientFundsException, LowStockException, NoBalanceException {
 
         if(totalInput<totalCost){
             throw new InsufficientFundsException("Insufficient Funds Total Input = "  + totalInput + " Total Cost = " + totalCost);
+        }
+        if(VENDINGMACHINE.getBalance() - (totalInput-totalCost) < 0){
+            throw new NoBalanceException("Please Enter The exact change");
         }
 
         new FileHandler().logPurchase(new Purchase(totalInput,itemsRequested.toString()));
@@ -271,6 +278,7 @@ public class TuringMachine {
             switch (item.getKey()) {
                 case "F" -> {
                     int items = item.getValue().getStoredValue();
+
                     if(items != 0 && sb.toString().contains("F") && VENDINGMACHINE.getForkCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setForkCount(VENDINGMACHINE.getForkCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
@@ -284,6 +292,7 @@ public class TuringMachine {
                 }
                 case "N" -> {
                     int items = item.getValue().getStoredValue();
+
                     if(items != 0&&sb.toString().contains("N") && VENDINGMACHINE.getNapkinCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setNapkinCount(VENDINGMACHINE.getNapkinCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
@@ -297,6 +306,7 @@ public class TuringMachine {
                 }
                 case "S" -> {
                     int items = item.getValue().getStoredValue();
+
                     if(items != 0 && sb.toString().contains("S") && VENDINGMACHINE.getSpoonCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setSpoonCount(VENDINGMACHINE.getSpoonCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
@@ -310,13 +320,16 @@ public class TuringMachine {
                 }
                 case "K" -> {
                     int items = item.getValue().getStoredValue();
+
                     if(items != 0 && sb.toString().contains("K") && VENDINGMACHINE.getKnifeCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setKnifeCount(VENDINGMACHINE.getKnifeCount() - item.getValue().getStoredValue());
+
                         while (item.getValue().getStoredValue() > 0) {
                             item.getValue().subtract();
                         }
                         System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + items + " ] Knife(ves)" + RESET);
                         checkMoney();
+
                     }else if (VENDINGMACHINE.getKnifeCount() == 0 && sb.toString().contains("K")){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
@@ -326,6 +339,7 @@ public class TuringMachine {
     }
 
     public void checkMoney(){
+
         if (totalInput > totalCost){
             //dispense Change
             VENDINGMACHINE.setBalance(VENDINGMACHINE.getBalance() + totalInput);
