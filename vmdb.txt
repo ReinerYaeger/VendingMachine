@@ -1,2 +1,1 @@
-VendingMachine{forkCount=19, napkinCount=20, spoonCount=18, knifeCount=19, balance=1240}
-VendingMachine{forkCount=18, napkinCount=19, spoonCount=17, knifeCount=18, balance=400}
+VendingMachine{forkCount=13, napkinCount=12, spoonCount=13, knifeCount=16, balance=1460}

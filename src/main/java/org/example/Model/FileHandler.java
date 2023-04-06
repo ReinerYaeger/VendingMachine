@@ -13,7 +13,7 @@ public class FileHandler {
     public void saveToFile(VendingMachine vm){
 
         System.out.println(PURPLE +" [✎] Writing to vmdb ... " +RESET);
-        try (PrintWriter writer = new PrintWriter(new FileWriter("vmdb.txt",true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("vmdb.txt"))) {
             writer.println(vm.toString());
         } catch (IOException e) {
             e.printStackTrace();

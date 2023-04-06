@@ -1,2 +1,17 @@
 Purchase{totalMoney= 120, itemsPurchased=' KSSF', timeStamp= 06/04/2023 18:38:05}
 Purchase{totalMoney= 80, itemsPurchased=' NKFS', timeStamp= 06/04/2023 18:39:02}
+Purchase{totalMoney= 40, itemsPurchased=' FNF', timeStamp= 06/04/2023 18:42:14}
+Purchase{totalMoney= 20, itemsPurchased=' N', timeStamp= 06/04/2023 18:42:14}
+Purchase{totalMoney= 120, itemsPurchased=' NNKFNNF', timeStamp= 06/04/2023 18:42:14}
+Purchase{totalMoney= 40, itemsPurchased=' FNF', timeStamp= 06/04/2023 18:42:21}
+Purchase{totalMoney= 20, itemsPurchased=' N', timeStamp= 06/04/2023 18:42:21}
+Purchase{totalMoney= 120, itemsPurchased=' NNKFNNF', timeStamp= 06/04/2023 18:42:21}
+Purchase{totalMoney= 120, itemsPurchased=' NNKFFF', timeStamp= 06/04/2023 18:42:28}
+Purchase{totalMoney= 80, itemsPurchased=' NKFS', timeStamp= 06/04/2023 18:42:54}
+Purchase{totalMoney= 80, itemsPurchased=' NFS', timeStamp= 06/04/2023 18:43:08}
+Purchase{totalMoney= 100, itemsPurchased=' NKFS', timeStamp= 06/04/2023 18:44:41}
+Purchase{totalMoney= 60, itemsPurchased=' SSS', timeStamp= 06/04/2023 18:44:47}
+Purchase{totalMoney= 40, itemsPurchased=' FNF', timeStamp= 06/04/2023 18:44:51}
+Purchase{totalMoney= 20, itemsPurchased=' N', timeStamp= 06/04/2023 18:44:51}
+Purchase{totalMoney= 120, itemsPurchased=' NNKFNNF', timeStamp= 06/04/2023 18:44:51}
+Purchase{totalMoney= 80, itemsPurchased=' NKFS', timeStamp= 06/04/2023 18:45:08}
