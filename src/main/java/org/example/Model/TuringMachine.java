@@ -230,6 +230,7 @@ public class TuringMachine {
                         }catch (InsufficientFundsException | LowStockException e){
                             System.err.println(e);
                         }
+                        break;
                         //totalItemCost()
 
                         //TODO add code to dispense item to use
@@ -265,12 +266,12 @@ public class TuringMachine {
         * Save the Result to the File
         * */
 
-        System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
+        //System.out.println( CYAN_BOLD+GREEN_UNDERLINED+"[፹] Here are your items" + RESET);
         for (Map.Entry<String,Register> item : ITEMREGISTERMAP.entrySet()){
             switch (item.getKey()) {
                 case "F" -> {
                     int items = item.getValue().getStoredValue();
-                    if(items != 0 && sb.toString().contains("F") && VENDINGMACHINE.getForkCount() > 0) {
+                    if(items != 0 && sb.toString().contains("F") && VENDINGMACHINE.getForkCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setForkCount(VENDINGMACHINE.getForkCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
                             item.getValue().subtract();
@@ -283,7 +284,7 @@ public class TuringMachine {
                 }
                 case "N" -> {
                     int items = item.getValue().getStoredValue();
-                    if(items != 0&&sb.toString().contains("N") && VENDINGMACHINE.getNapkinCount() > 0) {
+                    if(items != 0&&sb.toString().contains("N") && VENDINGMACHINE.getNapkinCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setNapkinCount(VENDINGMACHINE.getNapkinCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
                             item.getValue().subtract();
@@ -296,7 +297,7 @@ public class TuringMachine {
                 }
                 case "S" -> {
                     int items = item.getValue().getStoredValue();
-                    if(items != 0 && sb.toString().contains("S") && VENDINGMACHINE.getSpoonCount() > 0) {
+                    if(items != 0 && sb.toString().contains("S") && VENDINGMACHINE.getSpoonCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setSpoonCount(VENDINGMACHINE.getSpoonCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
                             item.getValue().subtract();
@@ -309,7 +310,7 @@ public class TuringMachine {
                 }
                 case "K" -> {
                     int items = item.getValue().getStoredValue();
-                    if(items != 0 && sb.toString().contains("K") && VENDINGMACHINE.getKnifeCount() > 0) {
+                    if(items != 0 && sb.toString().contains("K") && VENDINGMACHINE.getKnifeCount() >= item.getValue().getStoredValue()) {
                         VENDINGMACHINE.setKnifeCount(VENDINGMACHINE.getKnifeCount() - item.getValue().getStoredValue());
                         while (item.getValue().getStoredValue() > 0) {
                             item.getValue().subtract();
