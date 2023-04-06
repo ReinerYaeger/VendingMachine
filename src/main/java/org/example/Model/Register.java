@@ -18,6 +18,12 @@ public class Register {
 
 
     public boolean subtract(){
+
+        try {
+            checkStoredValue();
+        } catch (TuringMachine.LowStockException e) {
+            throw new RuntimeException(e);
+        }
         if(storedValue <= 0){
             return false;
         }
@@ -25,10 +31,10 @@ public class Register {
         return true;
     }
 
-    public boolean subtractMany(int values){
+    public boolean subtractMany(int values) throws TuringMachine.LowStockException {
         for (int i = 0 ; i <= values; i++)
             if (!subtract()){
-                return false;
+                throw new TuringMachine.LowStockException("Please Contact your local Technician for a restock");
             }
         return true;
     }
@@ -38,9 +44,19 @@ public class Register {
     }
 
     public void setStoredValue(int storedValue) {
+        try {
+            checkStoredValue();
+        } catch (TuringMachine.LowStockException e) {
+
+        }
         this.storedValue = storedValue;
     }
 
+    public void checkStoredValue()  throws TuringMachine.LowStockException {
+        if (storedValue == 0){
+            throw new TuringMachine.LowStockException("");
+        }
+    }
     @Override
     public String toString() {
         return "Register{" +
