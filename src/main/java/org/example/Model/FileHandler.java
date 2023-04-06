@@ -63,7 +63,7 @@ public class FileHandler {
 
     public int calculateTotalPurchase(){
 
-        System.out.println(PURPLE +" [✎] Reading from vmdb ... " +RESET);
+        System.out.println(PURPLE +" [✎] Reading from log ... " +RESET);
 
         /*int totalMoney = 0;
 
