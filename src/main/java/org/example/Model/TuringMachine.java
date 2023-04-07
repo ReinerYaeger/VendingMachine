@@ -222,6 +222,7 @@ public class TuringMachine {
                         System.out.println( GREEN_BOLD+ "[qa2] Restock: Accept State" + RESET);
 
                         restock();
+                        new FileHandler().saveToFile(VENDINGMACHINE);
                         break;
                         //TODO add code to restock register
                     }
@@ -286,7 +287,6 @@ public class TuringMachine {
                             item.getValue().subtract();
                         }
                         System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + items + " ] Fork(s)" + RESET);
-                        checkMoney();
                     }else if (VENDINGMACHINE.getForkCount() == 0 && sb.toString().contains("F")){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
@@ -300,7 +300,6 @@ public class TuringMachine {
                             item.getValue().subtract();
                         }
                         System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + items + " ] Napkin(s)" + RESET);
-                        checkMoney();
                     } else if (VENDINGMACHINE.getNapkinCount() == 0 && sb.toString().contains("N")){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
@@ -314,7 +313,6 @@ public class TuringMachine {
                             item.getValue().subtract();
                         }
                         System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + items + " ] Spoon(s)" + RESET);
-                        checkMoney();
                     }else if (VENDINGMACHINE.getSpoonCount() == 0 && sb.toString().contains("S")){
                         throw new LowStockException("Please Contact your local Technician for a restock");
                     }
@@ -329,7 +327,6 @@ public class TuringMachine {
                             item.getValue().subtract();
                         }
                         System.out.println(CYAN_BOLD + GREEN_UNDERLINED + "[፹] [ " + items + " ] Knife(ves)" + RESET);
-                        checkMoney();
 
                     }else if (VENDINGMACHINE.getKnifeCount() == 0 && sb.toString().contains("K")){
                         throw new LowStockException("Please Contact your local Technician for a restock");
@@ -337,6 +334,7 @@ public class TuringMachine {
                 }
             }
         }
+        checkMoney();
     }
 
     public void checkMoney(){

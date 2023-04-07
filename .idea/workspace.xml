@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d87e45a8-330a-4a80-bedf-92b87ec271d7" name="Changes" comment="Fixed File handling">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vmdb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vmdb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vmdb.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680824455869</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fixed File handling">
+      <created>1680824724984</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1680824724984</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,7 +366,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java</url>
-          <line>235</line>
+          <line>236</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -366,7 +377,7 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" line="322">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/main/java/org/example/Model/TuringMachine.java" line="320">
         <watch expression="items" />
       </inline-watch>
     </watches-manager>

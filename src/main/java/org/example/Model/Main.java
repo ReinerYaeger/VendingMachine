@@ -21,10 +21,10 @@ public class Main {
             System.out.println();
 
             System.out.println(GREEN_UNDERLINED + "[፹] We Items Available" + RESET);
-            System.out.println(GREEN_UNDERLINED + "[፹] [K] Knives: " + VENDINGMACHINE.getKnifeCount() + RESET);
-            System.out.println(GREEN_UNDERLINED + "[፹] [F] Forks:  " + VENDINGMACHINE.getForkCount() + RESET);
-            System.out.println(GREEN_UNDERLINED + "[፹] [S] Spoons: " + VENDINGMACHINE.getSpoonCount() + RESET);
-            System.out.println(GREEN_UNDERLINED + "[፹] [N] Napkin: " + VENDINGMACHINE.getNapkinCount() + RESET);
+            System.out.println(GREEN_UNDERLINED + "[፹] [K] Knives \t = Cost: $" + new Money().getPrice("K") + " \tQuantity: " + VENDINGMACHINE.getKnifeCount() + RESET);
+            System.out.println(GREEN_UNDERLINED + "[፹] [F] Forks  \t = Cost: $" + new Money().getPrice("F") + " \tQuantity: " + VENDINGMACHINE.getForkCount() + RESET);
+            System.out.println(GREEN_UNDERLINED + "[፹] [S] Spoons \t = Cost: $" + new Money().getPrice("S") + " \tQuantity: " + VENDINGMACHINE.getSpoonCount() + RESET);
+            System.out.println(GREEN_UNDERLINED + "[፹] [N] Napkin \t = Cost: $" +new Money().getPrice("N")+" \tQuantity: " + VENDINGMACHINE.getNapkinCount() + RESET);
             System.out.println(GREEN_UNDERLINED + "[፹] Please Select what you would like eg, ccccNNFFK" + RESET);
 
             System.out.println();

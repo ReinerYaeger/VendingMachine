@@ -41,7 +41,7 @@ public class FileHandler {
     public void logPurchase(Purchase purchase){
         System.out.println(PURPLE +" [✎] Writing to Purchase Log ... ");
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("log.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("log.txt"))) {
             writer.println(purchase.toString());
         } catch (IOException e) {
             e.printStackTrace();
